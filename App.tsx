@@ -29,9 +29,9 @@ export default function App() {
     <View style={styles.container}>
       <ColumnChart
         data={data}
-        titleStyles={{color: 'red'}}
-        columnStyles={{backgroundColor: 'red'}}
-        containerStyles={{width: '50%'}}
+        // titleStyles={{color: 'red'}}
+        // columnStyles={{backgroundColor: 'red'}}
+        // containerStyles={{width: '50%'}}
       />
     </View>
   );
