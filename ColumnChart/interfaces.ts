@@ -7,5 +7,5 @@ export interface ColumnChartProps {
   data: ColumnChartData[];
   containerStyles?: any;
   columnStyles?: any;
-  color?: string;
+  titleStyles?: any;
 }
