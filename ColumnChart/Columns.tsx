@@ -6,12 +6,13 @@ import colors from './colors';
 export default function Columns(props: {
   data: ColumnChartData[];
   columnStyles: any;
+  maxColumnHeight: number;
 }) {
   const data = props.data;
   const max = [...props.data].sort(
     (a: ColumnChartData, b: ColumnChartData) => b.value - a.value,
   )[0].value;
-  const height: number = 100;
+  const height: number = props.maxColumnHeight || 100;
 
   return (
     <View style={styles.container}>

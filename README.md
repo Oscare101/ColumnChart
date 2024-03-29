@@ -1,79 +1,115 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Column Chart
 
-# Getting Started
+Bare React Native minimalistic column chart
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+### Example of components with default properties
 
-## Step 1: Start the Metro Server
+![example](./screenshots/1.jpg)
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+```tsx
+import ColumnChart from './ColumnChart';
 
-To start Metro, run the following command from the _root_ of your React Native project:
+const data: any = [
+  {value: 2, title: '1'},
+  {value: 3, title: '2'},
+  {value: 5, title: '3'},
+  {value: 4, title: '4'},
+];
 
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+return <ColumnChart data={data} />;
 ```
 
-## Step 2: Start your Application
+### Usage
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Requires no additional libraries
 
-### For Android
+### Properties
 
-```bash
-# using npm
-npm run android
+| Property        | Type     | Required | Description                                                       |
+| --------------- | -------- | -------- | ----------------------------------------------------------------- |
+| data            | Object[] | Yes      | Data that will render. Use [{value: number, title?: string}] type |
+| containerStyles | Object   | No       | Styles for container                                              |
+| columnStyles    | Object   | No       | Styles for columns                                                |
+| titleStyles     | Object   | No       | Styles for titles                                                 |
 
-# OR using Yarn
-yarn android
+### Example of using all styles properties
+
+![example](./screenshots/2.jpg)
+
+```tsx
+import ColumnChart from './ColumnChart';
+
+const data: any = [
+  {value: 2, title: '1'},
+  {value: 3, title: '2'},
+  {value: 5, title: '3'},
+  {value: 4, title: '4'},
+  {value: 2, title: '5'},
+  {value: 3, title: '6'},
+  {value: 5, title: '7'},
+  {value: 4, title: '8'},
+  {value: 4, title: '9'},
+  {value: 6, title: '10'},
+  {value: 7, title: '11'},
+  {value: 5, title: '12'},
+  {value: 4, title: '13'},
+  {value: 6, title: '14'},
+  {value: 3, title: '15'},
+  {value: 2, title: '16'},
+  {value: 1, title: '17'},
+  {value: 3, title: '18'},
+  {value: 4, title: '19'},
+  {value: 5, title: '20'},
+];
+
+return (
+  <ColumnChart
+    data={data}
+    maxColumnHeight={50}
+    titleStyles={{color: '#c5d6e8', fontSize: 10}}
+    columnStyles={{backgroundColor: '#77aae0', width: '90%'}}
+    containerStyles={{width: '92%', backgroundColor: '#000', padding: 5}}
+  />
+);
 ```
 
-### For iOS
+And without titles
 
-```bash
-# using npm
-npm run ios
+![example](./screenshots/3.jpg)
 
-# OR using Yarn
-yarn ios
+```tsx
+import ColumnChart from './ColumnChart';
+
+const data: any = [
+  {value: 2},
+  {value: 3},
+  {value: 5},
+  {value: 4},
+  {value: 2},
+  {value: 3},
+  {value: 5},
+  {value: 4},
+  {value: 4},
+  {value: 6},
+  {value: 7},
+  {value: 5},
+  {value: 4},
+  {value: 6},
+  {value: 3},
+  {value: 2},
+  {value: 1},
+  {value: 3},
+  {value: 4},
+  {value: 5},
+];
+
+return (
+  <ColumnChart
+    data={data}
+    maxColumnHeight={100}
+    titleStyles={{color: '#c5d6e8', fontSize: 10}}
+    columnStyles={{backgroundColor: '#77aae0', width: '90%'}}
+    containerStyles={{width: '92%', backgroundColor: '#000', padding: 5}}
+  />
+);
 ```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.

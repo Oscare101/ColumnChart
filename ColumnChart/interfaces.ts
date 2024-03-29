@@ -8,4 +8,5 @@ export interface ColumnChartProps {
   containerStyles?: any;
   columnStyles?: any;
   titleStyles?: any;
+  maxColumnHeight?: number;
 }

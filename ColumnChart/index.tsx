@@ -8,7 +8,11 @@ import Columns from './Columns';
 export default function ColumnChart(props: ColumnChartProps) {
   return (
     <View style={[styles.container, props.containerStyles]}>
-      <Columns data={props.data} columnStyles={props.columnStyles} />
+      <Columns
+        data={props.data}
+        columnStyles={props.columnStyles}
+        maxColumnHeight={props.maxColumnHeight!}
+      />
       {props.data.every((d: ColumnChartData) => !!d.title) ? (
         <ColumnTitles data={props.data} titleStyles={props.titleStyles} />
       ) : (
